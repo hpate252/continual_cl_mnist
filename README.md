@@ -54,8 +54,8 @@ In your run, this is exactly what happened:
 - While training on Task 2:
   - Add an **EWC penalty** that discourages changing parameters that were important for Task 1.
 
-I ran:
-```bash
+
+I ran: ```bash
 python main.py --method ewc --lambda-ewc 500
 
 
