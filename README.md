@@ -55,8 +55,8 @@ In your run, this is exactly what happened:
   - Add an **EWC penalty** that discourages changing parameters that were important for Task 1.
 
 
-I ran: ```bash
-python main.py --method ewc --lambda-ewc 500
+```bash
+I ran: python main.py --method ewc --lambda-ewc 500
 
 
 -> Replay Buffer / Experience Replay (--method replay)
