@@ -57,7 +57,6 @@ def train_one_epoch(
         loss.backward()
         optimizer.step()
 
-        # Fill replay buffer during Task 1 (if enabled)
         if update_buffer and replay_buffer is not None:
             replay_buffer.add_batch(inputs.detach(), targets.detach())
 
