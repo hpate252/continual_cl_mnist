@@ -4,10 +4,7 @@ import torch.nn.functional as F
 
 
 class SimpleCNN(nn.Module):
-    """
-    Small CNN for 28x28 grayscale MNIST images.
-    Outputs logits over 10 classes (digits 0–9).
-    """
+    """ Small CNN for 28x28 grayscale MNIST images. Outputs logits over 10 classes (digits 0–9). """
 
     def __init__(self, num_classes: int = 10):
         super().__init__()
