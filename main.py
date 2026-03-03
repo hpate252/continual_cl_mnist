@@ -27,9 +27,11 @@ def train_one_epoch(
     lambda_ewc: float = 0.0,
     update_buffer: bool = False,
 ) -> float:
+    
     """
     Trains model for one epoch and returns average loss.
     """
+    
     model.train()
     running_loss = 0.0
     n_samples = 0
@@ -50,7 +52,6 @@ def train_one_epoch(
         outputs = model(inputs)
         loss = criterion(outputs, targets)
 
-        # Add EWC penalty if needed
         if method == "ewc" and prev_params is not None and fisher is not None:
             loss = loss + ewc_loss(model, prev_params, fisher, lambda_ewc)
 
