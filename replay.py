@@ -5,8 +5,7 @@ import torch
 
 class ReplayBuffer:
     """
-    Simple replay buffer that stores individual (image, label) pairs.
-    Uses random replacement when capacity is exceeded.
+    Simple replay buffer that stores individual (image, label) pairs. Uses random replacement when capacity is exceeded.
     """
 
     def __init__(self, capacity: int, device):
