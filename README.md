@@ -2,9 +2,9 @@
 
 This project explores **continual learning** on the classic **Split-MNIST** benchmark using three different training strategies:
 
-- **Naive fine-tuning** (baseline)
-- **Elastic Weight Consolidation (EWC)**
-- **Replay Buffer (Experience Replay)**
+1. **Naive fine-tuning** (baseline)
+2. **Elastic Weight Consolidation (EWC)**
+3. **Replay Buffer (Experience Replay)**
 
 The goal is to show how neural networks **forget old tasks** when trained sequentially (catastrophic forgetting), and how replay-based methods can reduce that forgetting.
 
