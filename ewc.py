@@ -6,8 +6,7 @@ import torch.nn as nn
 @torch.no_grad()
 def clone_params(model: nn.Module) -> Dict[str, torch.Tensor]:
     """
-    Returns a dictionary of parameter_name -> detached clone of parameter tensor.
-    Used to store θ* after Task 1.
+    Returns a dictionary of parameter_name -> detached clone of parameter tensor. Used to store θ* after Task 1.
     """
     return {
         name: p.detach().clone()
@@ -23,8 +22,7 @@ def compute_fisher_information(
     num_batches: int = 100,
 ) -> Dict[str, torch.Tensor]:
     """
-    Approximates the diagonal Fisher information matrix for model parameters
-    using gradients of the log-likelihood on data from dataloader.
+    Approximates the diagonal Fisher information matrix for model parameters using gradients of the log-likelihood on data from dataloader.
     """
     model.eval()
     fisher = {
@@ -70,9 +68,7 @@ def ewc_loss(
     lambda_ewc: float,
 ) -> torch.Tensor:
     """
-    Computes the EWC quadratic penalty:
-
-      λ * Σ_i F_i * (θ_i - θ_i*)²
+    Computes the EWC quadratic penalty:   λ * Σ_i F_i * (θ_i - θ_i*)²
     """
     device = next(model.parameters()).device
     loss = torch.tensor(0.0, device=device)
