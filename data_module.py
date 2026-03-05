@@ -24,16 +24,14 @@ def get_split_mnist_dataloaders(
 ) -> Tuple[DataLoader, DataLoader]:
     """
     Returns train and test dataloaders for a specific Split-MNIST task.
-
-    Task 1: digits 0–4
-    Task 2: digits 5–9
+    Task 1: digits 0–4 | Task 2: digits 5–9
     """
     assert task_id in (1, 2), "Only task_id 1 or 2 supported."
 
     transform = transforms.Compose(
         [
             transforms.ToTensor(),
-            # Standard MNIST mean/std
+            # Standard MNIST Mean/std
             transforms.Normalize((0.1307,), (0.3081,)),
         ]
     )
