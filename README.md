@@ -23,11 +23,9 @@ We split the MNIST dataset into two sequential tasks:
 - **Task 1:** classify digits **0–4**  
 - **Task 2:** classify digits **5–9**
 
-The model is trained on **Task 1 first**, then on **Task 2**.  
-We monitor how accuracy on **Task 1** changes *before and after* learning Task 2.
+The model is trained on **Task 1 first**, then on **Task 2**.  We monitor how the accuracy on **Task 1** changes *before and after* learning Task 2.
 
 A small CNN (defined in `models.py`) is used as the backbone classifier.
-
 ---
 
 ## 2. Methods Implemented
@@ -58,7 +56,6 @@ In your run, this is exactly what happened:
 ```bash
 I ran: python main.py --method ewc --lambda-ewc 500
 
-
 -> Replay Buffer / Experience Replay (--method replay)
 
 While training on Task 1, store a subset of images/labels in a replay buffer.
@@ -77,7 +74,7 @@ Task 1 accuracy before Task 2: ~99.8%
 Task 1 accuracy after Task 2: ~98.4%
 Task 2 accuracy after training: ~99.0%
 
-So replay dramatically reduced forgetting compared to naive fine-tuning and EWC (with current settings).
+So, replay dramatically reduced forgetting compared to naive fine-tuning and EWC (with current settings).
 
 
 3. Project Structure
