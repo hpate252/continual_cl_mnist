@@ -118,7 +118,6 @@ def run_experiment(
         task_id=2, batch_size=batch_size
     )
 
-    # Model & optimizer
     model = SimpleCNN(num_classes=10).to(device)
     optimizer = optim.Adam(model.parameters(), lr=lr)
     criterion = nn.CrossEntropyLoss()
