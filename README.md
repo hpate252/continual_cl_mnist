@@ -55,7 +55,9 @@ In your run, this is exactly what happened:
 
 ```bash
 I ran: python main.py --method ewc --lambda-ewc 500
+
 -> Replay Buffer / Experience Replay (--method replay)
+
 While training on Task 1, store a subset of images/labels in a replay buffer.
 
 During Task 2 training:
@@ -68,6 +70,7 @@ Your observed results:
 Task 1 accuracy before Task 2: ~99.8%
 Task 1 accuracy after Task 2: ~98.4%
 Task 2 accuracy after training: ~99.0%
+
 So, replay dramatically reduced forgetting compared to naive fine-tuning and EWC (with current settings).
 
 
@@ -94,4 +97,5 @@ On the first run, MNIST is downloaded automatically.
 -Naive fine-tuning learns the new task well but completely forgets the old one (0% accuracy on Task 1 after Task 2).
 -EWC (with current hyperparameters) preserves Task 2 accuracy but still suffers from forgetting on Task 1.
 -Replay buffer keeps performance high on both tasks (≈98–99% on Task 1 and Task 2), showing a clear reduction in catastrophic forgetting.
+
 -> This project demonstrates a full, working pipeline for continual learning on Split-MNIST using PyTorch
