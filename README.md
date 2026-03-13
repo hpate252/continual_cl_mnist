@@ -26,7 +26,6 @@ We split the MNIST dataset into two sequential tasks:
 The model is trained on **Task 1 first**, then on **Task 2**.  We monitor how the accuracy on **Task 1** changes *before and after* learning Task 2.
 
 A small CNN (defined in `models.py`) is used as the backbone classifier.
----
 
 ## 2. Methods Implemented
 
