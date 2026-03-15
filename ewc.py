@@ -39,9 +39,9 @@ def compute_fisher_information(
         model.zero_grad()
         outputs = model(inputs)
         log_probs = torch.log_softmax(outputs, dim=1)
-        # mean log-likelihood of the true class
+        # mean log likelihood of the true class
         log_likelihood = log_probs[range(len(targets)), targets].mean()
-        # we want gradient of *negative* log-likelihood
+        # we want gradient of *negative* log likelihood
         (-log_likelihood).backward()
 
         for name, p in model.named_parameters():
